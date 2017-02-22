@@ -331,6 +331,12 @@ angular.module('trig', [])
                 pos.mulVeci(new Vec(1, -1));
                 pos.addVeci($scope.origin);
                 updateCanvas(pos);
+            } else if($scope.baseAngle != ""){
+                var pos = new Vec(1, 0);
+                pos.rotate(toRadians($scope.baseAngle));
+                $scope.baseXCoords = pos.x;
+                $scope.baseYCoords = pos.y;
+                $scope.updateForm();
             } else {
                 init_canvas();
                 canvas_click_me();
