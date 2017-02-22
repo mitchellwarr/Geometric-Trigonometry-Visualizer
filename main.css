@@ -1,0 +1,197 @@
+
+/* Standard tags
+ *******************************/
+body {
+    padding: 0;
+    font-family: Calibri;
+    color: #4f4f4f;
+    margin: 20px 60px 0px 60px;
+}
+
+.rowInput {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    box-shadow: 0px 1px 3px 1px #dedede;
+    -webkit-box-shadow: 0px 1px 3px 1px #dedede;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 7px;
+    right: 25px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.rowInput:focus {
+    width: 80px;
+    border: 1px solid #18bdf2;
+    display: inline-block;
+    right: 0px;
+}
+
+.rowInput:valid {
+    width: 80px;
+    right: 0px;
+}
+
+.rowInput:focus ~ .rowLabel, .rowInput:valid ~ .rowLabel {
+    font-size:14px;
+}
+
+.rowInput:hover ~ .closeButton, .closeButton:hover {
+    opacity: 1;
+    right: 8px;
+}
+
+.rowInput:invalid ~ .closeButton {
+    opacity: 0;
+    right: 0px;
+}
+
+.row {
+    width: 160px;
+    display: flex;
+    padding: 10px;
+}
+
+.rowInput {
+    width: 103px;
+    display: inline-block;
+}
+
+.rowButton {
+    width: 103px;
+    text-align: center;
+    border: 1px solid #C2C2C2;
+    box-shadow: 0px 1px 3px 1px #dedede;
+    -webkit-box-shadow: 0px 1px 3px 1px #dedede;
+    background-color: transparent;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 7px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.rowButton:hover {
+    cursor: pointer;
+}
+
+.rowButton:active {
+    border: 1px solid #18bdf2;
+    box-shadow: inset 0px 0px 4px 1px #dedede;
+    -webkit-box-shadow: inset 0px 0px 4px 1px #dedede;
+}
+
+.rowLabel {
+    width: 13px;
+    display: inline-block;
+    margin-right: 10px;
+    float: left;
+    position: relative;
+    pointer-events: none;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+}
+
+.MainCanvas {
+    resize: both;
+    min-width: 254px;
+    width: 100%;
+    min-height: 500px;
+    height: 500px;
+    margin: 40px 0px 60px 0px;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px 4px #cccccc;
+    overflow: hidden;
+}
+
+.MainCanvasFrame {
+    display: block;
+}
+
+.InputBox {
+    float: right;
+    min-height: 500px;
+    max-width: 320px;
+    vertical-align: top;
+    display: block;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.MainCanvasScreen {
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    background-color: #272943;
+}
+
+.labelBox {
+    margin-top: 20px;
+    margin-left: 10px;
+    border: 1px solid #C2C2C2;
+    box-shadow: 0px 1px 3px 1px #dedede;
+    -webkit-box-shadow: 0px 1px 3px 1px #dedede;
+    background-color: transparent;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    padding: 6px 0px 6px 0px;
+    display: block;
+}
+
+.labelBoxRow {
+    padding: 9px 9px 9px 9px;
+    display: flex;
+}
+
+.labelBoxRowItem {
+    padding: 0px 6px 0px 6px;
+    display: inline-block;
+    width: 70px;
+}
+
+.labelBoxText {
+    display: block;
+}
+
+.closeButton {
+    right: 0px;
+    border-radius: 50%;
+    position: relative;
+    opacity:0;
+    width: 17px;
+    padding: 0;
+    height: 17px;
+    background-color: #f98585;
+    border: 1px solid #f84848;
+    box-shadow: 0px 0px 2px 1px #dedede;
+    -webkit-box-shadow: 0px 0px 2px 1px #dedede;
+    cursor: pointer;
+    transition: 0.2s ease all; 
+    -moz-transition: 0.2s ease all; 
+    -webkit-transition: 0.2s ease all;
+    text-align: center;
+    line-height: 50%;
+}
+
+.closeButtonIcon {
+    margin: 0;
+    color: #cc0909;
+    font-size: 10px;
+}
+
+.resizeable {
+    float: right;
+    min-width: 100px;
+    display: block;
+    vertical-align: bottom;
+}

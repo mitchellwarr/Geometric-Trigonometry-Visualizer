@@ -1,0 +1,92 @@
+<!--Mitchell Warr-->
+<!DOCTYPE html>
+<html lang="en" ng-app="trig" ng-controller="TrigController">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trigonometric Visualizer</title>
+        <link rel="stylesheet" href="main.css"/>
+        <script src="http://code.angularjs.org/1.2.13/angular.js"></script>
+    </head>
+
+    <body>
+        <h1>Geometric Trigonometry Visualizer</h1>
+        <div class="MainCanvas" id="main">
+            <div class = "MainCanvasFrame" id="parentCanvas">
+                <canvas class="MainCanvasScreen" id="mainCanvas" width="0" height="0"
+                        ng-click="clickEvent($event)">
+                    Cannot view canvas
+                </canvas>
+            </div>
+            
+            <div class="InputBox" id="inputBox">
+                <div class="row">
+                    <form class="rowForm" ng-submit="updateForm()" novalidate>
+                        <input class="rowInput" ng-model="baseXCoords" required/>
+                        <div class="rowLabel">X:</div>
+                        <button type="button" class="closeButton" ng-click="clearX()">
+                            <p class="closeButtonIcon">X</p>
+                        </button>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="rowForm" ng-submit="updateForm()" novalidate>
+                        <input class="rowInput" ng-model="baseYCoords" required/>
+                        <div class="rowLabel">Y:</div>
+                        <button type="button" class="closeButton" ng-click="clearY()">
+                            <p class="closeButtonIcon">X</p>
+                        </button>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="rowForm" ng-submit="updateForm()" novalidate>
+                        <input class="rowInput" ng-model="baseAngle" required/>
+                        <div class="rowLabel">θ:</div>
+                        <button type="button" class="closeButton" ng-click="clearA()">
+                            <p class="closeButtonIcon">X</p>
+                        </button>
+                    </form>
+                </div>
+                <div class="row">
+                    <button class="rowButton" ng-click="updateForm()">Draw</button>
+                </div>
+                <div class="labelBox">
+                    <div class="labelBoxRow">
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">cosθ:</div>
+                            <div class="labelBoxText" ng-bind="cos"></div>
+                        </div>
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">sinθ:</div>
+                            <div class="labelBoxText" ng-bind="sin"></div>
+                        </div>
+                    </div>
+                    <div class="labelBoxRow">
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">cotθ:</div>
+                            <div class="labelBoxText" ng-bind="cot"></div>
+                        </div>
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">tanθ:</div>
+                            <div class="labelBoxText" ng-bind="tan"></div>
+                        </div>
+                    </div>
+                    <div class="labelBoxRow">
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">cscθ:</div>
+                            <div class="labelBoxText" ng-bind="csc"></div>
+                        </div>
+                        <div class="labelBoxRowItem">
+                            <div class="labelBoxText">secθ:</div>
+                            <div class="labelBoxText" ng-bind="sec"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <script type="text/javascript" src="vec.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+    </body>
+</html>
