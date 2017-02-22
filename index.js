@@ -15,6 +15,8 @@ angular.module('trig', [])
         
         $scope.origin = new Vec($scope.margin, height-$scope.margin);
         $scope.radius = (height < width)?$scope.origin.y/$scope.radiusSize:(width-$scope.origin.x)/$scope.radiusSize;
+		if($scope.radius < 0)
+			$scope.radius = 0;
         $scope.fontSize = $scope.radius/10;
         
         var ctx = $scope.canvas.getContext("2d");
