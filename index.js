@@ -241,7 +241,7 @@ angular.module('trig', [])
             ctx.textAlign = "center";
             var textSec = new Vec(sec.x, sec.y);
             textSec.divi(2).addVeci($scope.origin);
-            ctx.fillText("csc", textSec.x, textSec.y+($scope.fontSize*(3/4)));
+            ctx.fillText("sec", textSec.x, textSec.y+($scope.fontSize*(3/4)));
         };
         
         var drawCscLine = function(ctx){
