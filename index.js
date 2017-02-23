@@ -195,6 +195,8 @@ angular.module('trig', [])
             ctx.lineWidth = 2;
             ctx.strokeStyle = $scope.color.sinLine;
             var drawSec = sec.addVec($scope.origin);
+            if(drawSec.x > 9999999)
+                drawSec.x = 9999999;
             ctx.moveTo(clickPosition.x, clickPosition.y);
             ctx.lineTo(drawSec.x, drawSec.y);
             ctx.stroke();
@@ -213,6 +215,8 @@ angular.module('trig', [])
             ctx.lineWidth = 2;
             ctx.strokeStyle = $scope.color.cosLine;
             var drawCsc = csc.addVec($scope.origin);
+            if(drawCsc.y < -99999999)
+                drawCsc.y = -99999999;
             ctx.moveTo(clickPosition.x, clickPosition.y);
             ctx.lineTo(drawCsc.x, drawCsc.y);
             ctx.stroke();
@@ -231,6 +235,8 @@ angular.module('trig', [])
             ctx.lineWidth = 2;
             ctx.strokeStyle = $scope.color.sinLine;
             var drawSec = sec.addVec($scope.origin);
+            if(drawSec.x > 9999999)
+                drawSec.x = 9999999;
             ctx.moveTo($scope.origin.x, $scope.origin.y);
             ctx.lineTo(drawSec.x, drawSec.y);
             ctx.stroke();
@@ -249,6 +255,8 @@ angular.module('trig', [])
             ctx.lineWidth = 2;
             ctx.strokeStyle = $scope.color.cosLine;
             var drawCsc = csc.addVec($scope.origin);
+            if(drawCsc.y < -99999999)
+                drawCsc.y = -99999999;
             ctx.moveTo($scope.origin.x, $scope.origin.y);
             ctx.lineTo(drawCsc.x, drawCsc.y);
             ctx.stroke();
