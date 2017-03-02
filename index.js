@@ -18,6 +18,8 @@ angular.module('trig', [])
 		if($scope.radius < 0)
 			$scope.radius = 0;
         $scope.fontSize = $scope.radius/10;
+        if($scope.fontSize < $scope.fontMinSize)
+            $scope.fontSize = $scope.fontMinSize;
         
         var ctx = $scope.canvas.getContext("2d");
         ctx.beginPath();
@@ -35,11 +37,7 @@ angular.module('trig', [])
     };
     
     var resize_canvas = function(){
-        var main = angular.element( document.querySelector( '#main' ) )[0];
-        var inputBox = angular.element( document.querySelector( '#inputBox' ) )[0];
         var parent = angular.element( document.querySelector( '#parentCanvas' ) )[0];
-        var width = main.clientWidth - inputBox.offsetWidth;
-        var height = main.clientHeight;
         var width = parent.clientWidth;
         var height = parent.clientHeight;
         width = (width < 0)? 0 : width;
@@ -372,6 +370,7 @@ angular.module('trig', [])
         circle: "#e20456"
     };
     $scope.fontSize = 10;
+    $scope.fontMinSize = 15;
     $scope.radius = 0;
     $scope.radiusSize = 3;
     $scope.origin = new Vec();
