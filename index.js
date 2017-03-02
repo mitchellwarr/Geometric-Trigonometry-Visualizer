@@ -37,8 +37,11 @@ angular.module('trig', [])
     var resize_canvas = function(){
         var main = angular.element( document.querySelector( '#main' ) )[0];
         var inputBox = angular.element( document.querySelector( '#inputBox' ) )[0];
+        var parent = angular.element( document.querySelector( '#parentCanvas' ) )[0];
         var width = main.clientWidth - inputBox.offsetWidth;
         var height = main.clientHeight;
+        var width = parent.clientWidth;
+        var height = parent.clientHeight;
         width = (width < 0)? 0 : width;
         
         $scope.canvas.width = width;
@@ -374,13 +377,6 @@ angular.module('trig', [])
     $scope.origin = new Vec();
     $scope.margin = 50;
     $scope.canvas = angular.element( document.querySelector( '#mainCanvas' ) )[0];
-    $scope.mainCanvas = angular.element( document.querySelector( '#main' ) )[0];
-    $scope.$watch('mainCanvas.offsetHeight', function(){
-        resize_canvas();
-    });
-    $scope.$watch('mainCanvas.offsetWidth', function(){
-        resize_canvas();
-    });
     $scope.baseXCoords = "";
     $scope.baseYCoords = "";
     $scope.baseAngle = "";
@@ -392,27 +388,7 @@ angular.module('trig', [])
     $scope.sec = "";
     $scope.csc = "";
     
-    window.addEventListener('resize', window_resize_canvas, false);
-    function window_resize_canvas(){
-        $scope.mainCanvas.style.width = null;
-        resize_canvas();
-    }
-    
-    $scope.mainCanvas.addEventListener('mousedown', mousedownresize, false);
-    $scope.mainCanvas.addEventListener('mousemove', mousemoveresize, false);
-    $scope.mainCanvas.addEventListener('mouseup', mouseupresize, false);
-    var isMouseDownresize=false;
-    function mousedownresize(){
-        isMouseDownresize = true;
-    }
-    function mousemoveresize(event){
-        if(isMouseDownresize){
-            $scope.$apply();
-        }
-    }
-    function mouseupresize(){
-        isMouseDownresize = false;
-    }
+    window.addEventListener('resize', resize_canvas, false);
     
     $scope.canvas.addEventListener('mousedown', mousedown, false);
     $scope.canvas.addEventListener('mousemove', mousemove, false);
