@@ -52,9 +52,9 @@ angular.module('trig', [])
         var ctx = $scope.canvas.getContext("2d");
         ctx.beginPath();
         ctx.fillStyle = $scope.color.gridLine;
-        ctx.font = 10 + "px Calibri";
+        ctx.font = 16 + "px Calibri";
         ctx.textAlign = "left";
-        ctx.fillText("click on screen", $scope.origin.x + 10, 30);
+        ctx.fillText("click on screen", $scope.origin.x + 10, 40);
     };
     
     $scope.clickEvent = function(event){
